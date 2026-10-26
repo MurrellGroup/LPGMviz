@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:,">
+  <title>GEOM · Conditional and generated paths</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="toolbar">
+        <div class="methods" role="group" aria-label="Method">
+          <button type="button" data-method="fragment" aria-pressed="true">Fragment Noise</button>
+          <button type="button" data-method="bm" aria-pressed="false">Brownian Atoms</button>
+        </div>
+        <div class="samples">
+          <button type="button" id="previous" aria-label="Previous sample">‹</button>
+          <label><span class="sr-only">Matched sample</span><select id="sample" aria-label="Matched sample"></select></label>
+          <button type="button" id="next" aria-label="Next sample">›</button>
+        </div>
+      </div>
+    </header>
+    <div class="panel-headings">
+      <div><h2>Conditional process</h2></div>
+      <div><h2>Generated sample</h2></div>
+    </div>
+    <div id="stage">
+      <canvas id="viewport" aria-label="Conditional path on the left and generated sample on the right"></canvas>
+      <div id="status" role="status">Loading paths…</div>
+    </div>
+    <div class="transport">
+      <button id="play" type="button" aria-label="Play" disabled><svg id="pauseIcon" viewBox="0 0 20 20" aria-hidden="true" hidden><path d="M6 4v12M14 4v12"/></svg><svg id="playIcon" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 3l11 7-11 7z"/></svg></button>
+      <input id="timeline" type="range" min="0" max="1" step="0.0001" value="0" aria-label="Physical time" disabled>
+      <output id="time">t = 0.000</output>
+    </div>
+  </main>
+  <script type="module" src="app.js?v=3"></script>
+</body>
+</html>
